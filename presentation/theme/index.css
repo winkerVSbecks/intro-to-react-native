@@ -1,0 +1,57 @@
+.spectacle-slide {
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+
+/* Firefox */
+
+_:-moz-tree-row(hover),
+.spectacle-deck {
+  perspective: 1000px;
+}
+
+_:-moz-tree-row(hover),
+ul .appear {
+  display: inline;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #3456da;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #3456da;
+  color: #fff;
+}
+
+.svg-icon {
+  height: 3em;
+  width: 3em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #3456da;
+}
+
+.svg-icon circle {
+  stroke: #3456da;
+  stroke-width: 1;
+}
+
+code { font-family: 'Operator Mono', monospace; }
