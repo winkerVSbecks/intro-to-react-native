@@ -22,6 +22,8 @@ import theme from './theme';
 import * as icons from './icons';
 
 const images = {
+  debug: require('../assets/debug.gif'),
+  warn: require('../assets/warn.gif'),
 };
 
 preloader(images);
@@ -125,33 +127,6 @@ export default class Presentation extends Component {
               Why use it?
             </Heading>
           </Slide>
-          <Slide>
-            <Layout>
-              <Fit>
-                { icons.meter }
-              </Fit>
-              <Fill>
-                <Heading size={1}
-                  textAlign="left"
-                  margin="0 0 0 1rem">
-                  Performance
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-          <Slide notes="All image decoding is done in a different thread already">
-            <Heading size={3} margin="0 0 2rem 0">
-              True Multi-Threading
-            </Heading>
-            <Text lineHeight={1.2}>
-              JavaScript has it's own thread. We can move image processing, data manipulations, etc. to a different threaded.
-            </Text>
-          </Slide>
-          <Slide notes="Learn JavaScript once and deploy to the most popular platforms, Android and iOS <br/> Learn once, write anywhere, no context switching from multiple languages<br/>Hot Loading Changes: Being able to automatically see changes as you write them is much more efficient than having to recompile each change">
-            <Heading size={3} fit>
-              Developer Efficiency
-            </Heading>
-          </Slide>
           <Slide notes="A big reason to use RN over WebView based tools is to achieve the native look & feel<br/>We describe this feel as 60fps, and a silky smooth user interface experience<br/>It is possible to achieve this in a WebView with a lot of work, however this is much easier to achieve working with React Native<br />You are no longer limited by working in a WebView, no longer need to cut corners in order to increase performance<br/>React Native has a gesture responder system built into their View components which allows complex handing of touch events">
             <Layout>
               <Fit>
@@ -173,6 +148,33 @@ export default class Presentation extends Component {
                 </div>
               </Fill>
             </Layout>
+          </Slide>
+          <Slide>
+            <Layout>
+              <Fit>
+                { icons.meter }
+              </Fit>
+              <Fill>
+                <Heading size={1}
+                  textAlign="left"
+                  margin="0 0 0 1rem">
+                  Performance
+                </Heading>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide notes="All image decoding is done in a different thread already">
+            <Heading size={3} margin="0 0 2rem 0">
+              True Multi-Threading
+            </Heading>
+            <Text lineHeight={1.2}>
+              JavaScript has it's own thread. We can move image processing, data manipulations, etc. to a different thread.
+            </Text>
+          </Slide>
+          <Slide notes="Learn JavaScript once and deploy to the most popular platforms, Android and iOS <br/> Learn once, write anywhere, no context switching from multiple languages<br/>Hot Loading Changes: Being able to automatically see changes as you write them is much more efficient than having to recompile each change">
+            <Heading size={3} fit>
+              Developer Efficiency
+            </Heading>
           </Slide>
           <Slide notes="It is possible to write a great app without needing to write a single line of native code<br/>However, RN is also extensible in that you can write custom native views and modules<br/>You can reuse anything you've previously written or import your favourite native libs">
             <Heading size={2}>
@@ -222,7 +224,19 @@ export default class Presentation extends Component {
               <Code>react-native run-android</Code>
             </Text>
           </Slide>
-          <Slide notes="walk through the code for the bootstrapped app here.">
+          <Slide bgColor="blue">
+            <Layout>
+              <Fit>{ icons.code }</Fit>
+              <Fill>
+                <Heading size={1}
+                  textAlign="left"
+                  textColor="white">
+                  Show Me the Code
+                </Heading>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide>
             <Heading size={4}
               textAlign="left"
               margin="0 0 2rem 0">
@@ -260,10 +274,106 @@ export default class Presentation extends Component {
               }}>
             </iframe>
           </Slide>
-          {/* get started show install and creating a new app */}
-          {/* components */}
-          {/* CSS */}
-          {/* fetch */}
+          <Slide bgImage={ images.debug.replace('/', '') }>
+            <Heading size={4}>
+              Debugging
+            </Heading>
+          </Slide>
+          <Slide bgImage={ images.warn.replace('/', '') }>
+            <Heading size={4}>
+              More Debugging
+            </Heading>
+          </Slide>
+          <Slide>
+            <Heading size={4}
+              textAlign="left"
+              margin="0 0 2rem 0">
+              Platform Specific Extensions
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={ require('raw!../assets/platform-specific.jsx') }
+            />
+          </Slide>
+          <Slide>
+            <Layout>
+              <Fit>
+                { icons.touch }
+              </Fit>
+              <Fill>
+                <Heading size={4}
+                  textAlign="left"
+                  margin="0 0 2rem 0">
+                  Touch
+                </Heading>
+                <Text textAlign="left"
+                  margin="0 0 2rem 0">
+                  TouchableHighlight and Touchable*
+                </Text>
+                <Text textAlign="left">
+                  Gesture Responder System & PanResponder
+                </Text>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide>
+            <Heading size={4}
+              textAlign="left"
+              margin="0 0 2rem 0">
+              PanResponder
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={ require('raw!../assets/pan-responder.jsx') }
+            />
+          </Slide>
+          <Slide notes="Used to fetch resources, previously we would have used XMLHttpRequest<br/><br/>Built by the standards committee<br/><br/>Much easier to use than XMLHttpRequest<br/><br/>Provides the same features for making resource requests<br/><br/>Fetch is Promise based">
+            <Heading size={4}
+              textAlign="left"
+              margin="0 0 2rem 0">
+              Network
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={ require('raw!../assets/network.jsx') }
+            />
+          </Slide>
+          <Slide>
+            <Heading size={4}>Animations</Heading>
+            <List>
+              <ListItem>Declarative</ListItem>
+              <ListItem>Composable: parallel, sequence & stagger</ListItem>
+              <ListItem>Gestures and events can drive animations</ListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading size={4}>Navigator</Heading>
+            <List>
+              <ListItem>Will feel familiar</ListItem>
+              <ListItem>Stack based</ListItem>
+              <ListItem>Push/pop states</ListItem>
+              <ListItem>
+                <code>renderScene</code> callback decides what to render
+              </ListItem>
+            </List>
+          </Slide>
+          <Slide>
+            Timers (timeouts, requestAnimationFrame)
+
+            ```
+            setTimeout, clearTimeout
+            setInterval, clearInterval
+            setImmediate, clearImmediate
+            requestAnimationFrame, cancelAnimationFrame
+            ```
+          </Slide>
+          {/* components library (View, Text) */}
+          {/* Lists */}
+          {/* Others: geolocation, timers, etc.
+             requestAnimationFrame(fn) is not the same as setTimeout(fn, 0) - the former will fire after all the frame has flushed, whereas the latter will fire as quickly as possible (over 1000x per second on a iPhone 5S). InteractionManager*/}
+          {/*
+            https://js.coach/react-native/react-native-keyboard-spacer?search=keyboard
+          */}
           <Slide bgColor="blue" notes="The main value proposition is that RN provides a framework for developers to write React components that are backed by native code<br/>This experience can be translated directly into your web version of your app by using React on the front end<br/>Development experience between web, and native platforms then becomes seamless">
             <Heading size={3} fit textColor="white">
               Learn Once, Write Anywhere
@@ -294,11 +404,3 @@ export default class Presentation extends Component {
     );
   }
 }
-
-// fixedHeader
-// mediaObject
-//
-//
-//
-// sidebar
-// verticalCentering
