@@ -327,14 +327,6 @@ export default class Presentation extends Component {
               source={ require('raw!../assets/pan-responder.jsx') }
             />
           </Slide>
-          <Slide>
-            <Heading size={4}>Animations</Heading>
-            <List>
-              <ListItem>Declarative</ListItem>
-              <ListItem>Composable: parallel, sequence & stagger</ListItem>
-              <ListItem>Gestures and events can drive animations</ListItem>
-            </List>
-          </Slide>
           <Slide notes="Used to fetch resources, previously we would have used XMLHttpRequest<br/><br/>Built by the standards committee<br/><br/>Much easier to use than XMLHttpRequest<br/><br/>Provides the same features for making resource requests<br/><br/>Fetch is Promise based">
             <Heading size={4}
               textAlign="left"
@@ -345,6 +337,14 @@ export default class Presentation extends Component {
               lang="jsx"
               source={ require('raw!../assets/network.jsx') }
             />
+          </Slide>
+          <Slide>
+            <Heading size={4}>Animations</Heading>
+            <List>
+              <ListItem>Declarative</ListItem>
+              <ListItem>Composable: parallel, sequence & stagger</ListItem>
+              <ListItem>Gestures and events can drive animations</ListItem>
+            </List>
           </Slide>
           <Slide>
             <Heading size={4}>Navigator</Heading>
@@ -358,17 +358,18 @@ export default class Presentation extends Component {
             </List>
           </Slide>
           <Slide>
-            Timers (timeouts, requestAnimationFrame)
-
-            ```
-            setTimeout, clearTimeout
-            setInterval, clearInterval
-            setImmediate, clearImmediate
-            requestAnimationFrame, cancelAnimationFrame
-            ```
+            <Heading size={4}
+              textAlign="left"
+              margin="0 0 2rem 0">
+              Timers
+            </Heading>
+            <Text lineHeight={2} textAlign="left">
+              <Code>setTimeout</Code> ↔️ <Code>clearTimeout</Code> <br/>
+              <Code>setInterval</Code> ↔️ <Code>clearInterval</Code> <br/>
+              <Code>setImmediate</Code> ↔️ <Code>clearImmediate</Code> <br/>
+              <Code>requestAnimationFrame</Code> ↔️  <Code>cancelAnimationFrame</Code>
+            </Text>
           </Slide>
-          {/* components library (View, Text) */}
-          {/* Lists */}
           {/* Others: geolocation, timers, etc.
              requestAnimationFrame(fn) is not the same as setTimeout(fn, 0) - the former will fire after all the frame has flushed, whereas the latter will fire as quickly as possible (over 1000x per second on a iPhone 5S). InteractionManager*/}
           {/*
