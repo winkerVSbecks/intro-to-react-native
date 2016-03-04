@@ -327,6 +327,14 @@ export default class Presentation extends Component {
               source={ require('raw!../assets/pan-responder.jsx') }
             />
           </Slide>
+          <Slide>
+            <Heading size={4}>Animations</Heading>
+            <List>
+              <ListItem>Declarative</ListItem>
+              <ListItem>Composable: parallel, sequence & stagger</ListItem>
+              <ListItem>Gestures and events can drive animations</ListItem>
+            </List>
+          </Slide>
           <Slide notes="Used to fetch resources, previously we would have used XMLHttpRequest<br/><br/>Built by the standards committee<br/><br/>Much easier to use than XMLHttpRequest<br/><br/>Provides the same features for making resource requests<br/><br/>Fetch is Promise based">
             <Heading size={4}
               textAlign="left"
@@ -337,14 +345,6 @@ export default class Presentation extends Component {
               lang="jsx"
               source={ require('raw!../assets/network.jsx') }
             />
-          </Slide>
-          <Slide>
-            <Heading size={4}>Animations</Heading>
-            <List>
-              <ListItem>Declarative</ListItem>
-              <ListItem>Composable: parallel, sequence & stagger</ListItem>
-              <ListItem>Gestures and events can drive animations</ListItem>
-            </List>
           </Slide>
           <Slide>
             <Heading size={4}>Navigator</Heading>
