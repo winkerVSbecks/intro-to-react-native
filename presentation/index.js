@@ -47,7 +47,7 @@ export default class Presentation extends Component {
             <Link target="_blank"
               href="http://twitter.com/winkervsbecks">
               <Text lineHeight={1.2}
-                textColor="pink"
+                textColor="gray"
                 textAlign="left">
                 @winkerVSbecks
               </Text>
@@ -145,6 +145,17 @@ export default class Presentation extends Component {
               <Code>react-native run-android</Code>
             </Text>
           </Slide>
+          <Slide>
+            <Heading size={4}
+              textAlign="left"
+              margin="0 0 2rem 0">
+              Platform Specific Extensions
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={ require('raw!../assets/platform-specific.jsx') }
+            />
+          </Slide>
           <Slide bgColor="blue">
             <Layout>
               <Fit>{ icons.code }</Fit>
@@ -204,17 +215,6 @@ export default class Presentation extends Component {
             <Heading size={4}>
               More Debugging
             </Heading>
-          </Slide>
-          <Slide>
-            <Heading size={4}
-              textAlign="left"
-              margin="0 0 2rem 0">
-              Platform Specific Extensions
-            </Heading>
-            <CodePane
-              lang="jsx"
-              source={ require('raw!../assets/platform-specific.jsx') }
-            />
           </Slide>
           <Slide>
             <Layout>
@@ -373,9 +373,17 @@ export default class Presentation extends Component {
               </Text>
             </Link>
             <Link target="_blank"
+              href="https://github.com/winkerVSbecks/spotify-artist-lookup">
+              <Text lineHeight={1.2}
+                textColor="gray"
+                textAlign="left">
+                github.com/winkerVSbecks/spotify-artist-lookup
+              </Text>
+            </Link>
+            <Link target="_blank"
               href="http://twitter.com/winkervsbecks">
               <Text lineHeight={1.2}
-                textColor="pink"
+                textColor="gray"
                 textAlign="left">
                 @winkerVSbecks
               </Text>
