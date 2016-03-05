@@ -54,17 +54,6 @@ export default class Presentation extends Component {
             </Link>
           </Slide>
           <Slide>
-            <Heading size={4}>Overview</Heading>
-            <List>
-              <ListItem>Introduction</ListItem>
-              <ListItem>What is React Native?</ListItem>
-              <ListItem>Why should you use it?</ListItem>
-              <ListItem>Getting started</ListItem>
-              <ListItem>API</ListItem>
-              <ListItem>Build a simple app</ListItem>
-            </List>
-          </Slide>
-          <Slide>
             { icons.hybrid }
             <Heading size={3}>
               Hybrid Apps
@@ -76,7 +65,7 @@ export default class Presentation extends Component {
               <ListItem>A web view</ListItem>
               <ListItem>running a web app</ListItem>
               <ListItem>with access to native APIs</ListItem>
-              <ListItem>that you build once and deploy everywhere*</ListItem>
+              <ListItem>that you build once and deploy everywhere</ListItem>
             </List>
           </Slide>
           <Slide bgColor="blue">
@@ -116,74 +105,6 @@ export default class Presentation extends Component {
               </Fill>
             </Layout>
           </Slide>
-          <Slide notes="Examples include UITab on iOS and Drawer on Android <br/> An example is UITableView, which is not in React Native, but is provided by the open source community">
-            { icons.widgets }
-            <Text lineHeight={ 1.2 }>
-              Not all components are available. However, there are well maintained open source alternatives for those missing components.
-            </Text>
-          </Slide>
-          <Slide bgColor="blue">
-            <Heading size={3} fit textColor="white">
-              Why use it?
-            </Heading>
-          </Slide>
-          <Slide notes="A big reason to use RN over WebView based tools is to achieve the native look & feel<br/>We describe this feel as 60fps, and a silky smooth user interface experience<br/>It is possible to achieve this in a WebView with a lot of work, however this is much easier to achieve working with React Native<br />You are no longer limited by working in a WebView, no longer need to cut corners in order to increase performance<br/>React Native has a gesture responder system built into their View components which allows complex handing of touch events">
-            <Layout>
-              <Fit>
-                { icons.phone }
-              </Fit>
-              <Fill style={{
-                flex: 1,
-                display: 'flex',
-                alignItems: 'flex-end',
-                marginBottom: '1.5em',
-              }}>
-                <div >
-                  <Heading size={2} textAlign="left">
-                    Native
-                  </Heading>
-                  <Heading size={2} textAlign="left">
-                    Look and Feel
-                  </Heading>
-                </div>
-              </Fill>
-            </Layout>
-          </Slide>
-          <Slide>
-            <Layout>
-              <Fit>
-                { icons.meter }
-              </Fit>
-              <Fill>
-                <Heading size={1}
-                  textAlign="left"
-                  margin="0 0 0 1rem">
-                  Performance
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-          <Slide notes="All image decoding is done in a different thread already">
-            <Heading size={3} margin="0 0 2rem 0">
-              True Multi-Threading
-            </Heading>
-            <Text lineHeight={1.2}>
-              JavaScript has it's own thread. We can move image processing, data manipulations, etc. to a different thread.
-            </Text>
-          </Slide>
-          <Slide notes="Learn JavaScript once and deploy to the most popular platforms, Android and iOS <br/> Learn once, write anywhere, no context switching from multiple languages<br/>Hot Loading Changes: Being able to automatically see changes as you write them is much more efficient than having to recompile each change">
-            <Heading size={3} fit>
-              Developer Efficiency
-            </Heading>
-          </Slide>
-          <Slide notes="It is possible to write a great app without needing to write a single line of native code<br/>However, RN is also extensible in that you can write custom native views and modules<br/>You can reuse anything you've previously written or import your favourite native libs">
-            <Heading size={2}>
-              React Native is
-            </Heading>
-            <Heading size={2}>
-              Extensible
-            </Heading>
-          </Slide>
           <Slide notes="Draws on experience from developing for the modern web<br/>No new layout engine to learn if you have previous experience with CSS<br/>CSS style properties are converted into underlying native view properties">
             <Heading size={3}>
               Polyfills
@@ -196,7 +117,7 @@ export default class Presentation extends Component {
                 <code>window.requestAnimationFrame</code>
               </ListItem>
               <ListItem><code>navigator.geolocation</code></ListItem>
-              <ListItem>Flexbox!</ListItem>
+              <ListItem>CSS (Flexbox)!</ListItem>
             </List>
           </Slide>
           <Slide>
@@ -316,7 +237,7 @@ export default class Presentation extends Component {
               </Fill>
             </Layout>
           </Slide>
-          <Slide>
+          {/* <Slide>
             <Heading size={4}
               textAlign="left"
               margin="0 0 2rem 0">
@@ -326,7 +247,7 @@ export default class Presentation extends Component {
               lang="jsx"
               source={ require('raw!../assets/pan-responder.jsx') }
             />
-          </Slide>
+          </Slide> */}
           <Slide notes="Used to fetch resources, previously we would have used XMLHttpRequest<br/><br/>Built by the standards committee<br/><br/>Much easier to use than XMLHttpRequest<br/><br/>Provides the same features for making resource requests<br/><br/>Fetch is Promise based">
             <Heading size={4}
               textAlign="left"
@@ -370,8 +291,68 @@ export default class Presentation extends Component {
               <Code>requestAnimationFrame</Code> ↔️  <Code>cancelAnimationFrame</Code>
             </Text>
           </Slide>
-          {/* Others: geolocation, timers, etc.
-             requestAnimationFrame(fn) is not the same as setTimeout(fn, 0) - the former will fire after all the frame has flushed, whereas the latter will fire as quickly as possible (over 1000x per second on a iPhone 5S). InteractionManager*/}
+          <Slide bgColor="blue">
+            <Heading size={3} fit textColor="white">
+              Why use it?
+            </Heading>
+          </Slide>
+          <Slide notes="A big reason to use RN over WebView based tools is to achieve the native look & feel<br/>We describe this feel as 60fps, and a silky smooth user interface experience<br/>It is possible to achieve this in a WebView with a lot of work, however this is much easier to achieve working with React Native<br />You are no longer limited by working in a WebView, no longer need to cut corners in order to increase performance<br/>React Native has a gesture responder system built into their View components which allows complex handing of touch events">
+            <Layout>
+              <Fit>
+                { icons.phone }
+              </Fit>
+              <Fill style={{
+                flex: 1,
+                display: 'flex',
+                alignItems: 'flex-end',
+                marginBottom: '1.5em',
+              }}>
+                <div >
+                  <Heading size={2} textAlign="left">
+                    Native
+                  </Heading>
+                  <Heading size={2} textAlign="left">
+                    Look and Feel
+                  </Heading>
+                </div>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide>
+            <Layout>
+              <Fit>
+                { icons.meter }
+              </Fit>
+              <Fill>
+                <Heading size={1}
+                  textAlign="left"
+                  margin="0 0 0 1rem">
+                  Performance
+                </Heading>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide notes="All image decoding is done in a different thread already">
+            <Heading size={3} margin="0 0 2rem 0">
+              True Multi-Threading
+            </Heading>
+            <Text lineHeight={1.2}>
+              JavaScript has it's own thread. We can move image processing, data manipulations, etc. to a different thread.
+            </Text>
+          </Slide>
+          <Slide notes="Learn JavaScript once and deploy to the most popular platforms, Android and iOS <br/> Learn once, write anywhere, no context switching from multiple languages<br/>Hot Loading Changes: Being able to automatically see changes as you write them is much more efficient than having to recompile each change">
+            <Heading size={3} fit>
+              Developer Efficiency
+            </Heading>
+          </Slide>
+          <Slide notes="It is possible to write a great app without needing to write a single line of native code<br/>However, RN is also extensible in that you can write custom native views and modules<br/>You can reuse anything you've previously written or import your favourite native libs">
+            <Heading size={2}>
+              React Native is
+            </Heading>
+            <Heading size={2}>
+              Extensible
+            </Heading>
+          </Slide>
           {/*
             https://js.coach/react-native/react-native-keyboard-spacer?search=keyboard
           */}
